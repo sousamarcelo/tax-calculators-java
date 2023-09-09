@@ -2,7 +2,7 @@ package entities;
 
 public abstract class Taxpayer {
 	private String name;
-	private Double annualIncome;
+	protected Double annualIncome;
 	
 	public Taxpayer() {
 		// TODO Auto-generated constructor stub
@@ -29,6 +29,6 @@ public abstract class Taxpayer {
 		this.annualIncome = annualIncome;
 	}
 	
-	public abstract Double tax(Double annualIncome);	
+	public abstract Double tax();	
 
 }

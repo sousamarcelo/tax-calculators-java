@@ -1,13 +1,13 @@
 package entities;
 
 public class Individual extends Taxpayer{
-	public static final Double RATE1 = 0.15;
-	public static final Double RATE2 = 0.25;
+	public static final Double RATE1 = 15.0;
+	public static final Double RATE2 = 25.0;
 	
 	private Double healthExpenditures;
 	
 	public Individual() {
-		// TODO Auto-generated constructor stub
+		super();
 	}	
 
 	public Individual(String name, Double annualIncome, Double healthExpenditures) {
@@ -24,11 +24,11 @@ public class Individual extends Taxpayer{
 	}
 
 	@Override
-	public Double tax(Double annualIncome) {
+	public Double tax() {
 		if (annualIncome < 2000.0) {
-			return annualIncome += (annualIncome * RATE1) + (getHealthExpenditures() * 0.50);
+			return annualIncome * (1 + RATE1/100) + (getHealthExpenditures() * 0.50);
 		} else {
-			return annualIncome += (annualIncome * RATE2) + (getHealthExpenditures() * 0.50);
+			return annualIncome * (1 + RATE2/100) + (getHealthExpenditures() * 0.50);
 		}		
 	}
 }
