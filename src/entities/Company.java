@@ -1,8 +1,8 @@
 package entities;
 
 public class Company extends Taxpayer{
-	private static final Double RATE1 = 0.16;
-	private static final Double RATE2 = 0.14;
+	private static final Double RATE1 = 16.0;
+	private static final Double RATE2 = 14.0;
 		
 	private Integer numberOfEmployees;
 	
@@ -25,10 +25,10 @@ public class Company extends Taxpayer{
 
 	@Override
 	public Double tax() {
-		if (getNumberOfEmployees() > 10) {
-			return annualIncome * (1 + RATE2/100);
+		if (getNumberOfEmployees() > 10.0) {
+			return annualIncome * (RATE2/100);
 		} else {
-			return annualIncome * (1 + RATE1/100);
+			return annualIncome * (RATE1/100);
 		}		
 	}
 }

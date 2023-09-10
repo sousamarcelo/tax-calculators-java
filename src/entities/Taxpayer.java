@@ -30,5 +30,5 @@ public abstract class Taxpayer {
 	}
 	
 	public abstract Double tax();	
-
+	
 }
